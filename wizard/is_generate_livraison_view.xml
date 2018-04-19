@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+    
+    <record id="is_generate_livraison_view" model="ir.ui.view">
+        <field name="name">is.generate.livraison.view</field>
+        <field name="model">is.generate.livraison</field>
+        <field name="arch" type="xml">
+            <form string="Générer une livraison">
+                <group>
+                    <field name="sale_id" domain="[('state','not in',['draft','cancel','done'])]" />
+                </group>
+                <separator string="Etiquettes de livraison" />
+                <field name="etiquette_livraison_ids" nolabel="1" >
+                    <tree string="Etiquettes livraison" >
+                        <field name="name" />
+                        <field name="sale_id"/>
+                        <field name="production_id"/>
+                    </tree>
+                        </field>
+                <footer>
+                    <button name="generate_livraison" string="Générer livraison" type="object" class="oe_highlight"/>
+                    or 
+                    <button string="Annuler" class="oe_link" special="cancel" />
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_generate_livraison_view" model="ir.actions.act_window">
+        <field name="name">Générer une livraison</field>
+        <field name="res_model">is.generate.livraison</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="is_generate_livraison_view"/>
+        <field name="target">new</field>
+    </record>
+    
+    
+    <menuitem   action="action_generate_livraison_view" 
+                id="menu_action_generate_livraison_view"
+                parent="menu_is_bsa_tracabilite"
+                sequence="3"/>
+
+
+    </data>
+</openerp>

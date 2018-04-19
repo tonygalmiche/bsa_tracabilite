@@ -1,0 +1,9 @@
+.openerp .oe_positive_field {
+    color: white;
+    background: #008000;
+}
+
+.openerp .oe_negative_field {
+	color: white;
+    background: #FF0000;
+}

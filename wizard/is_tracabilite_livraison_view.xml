@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+    
+    <record id="is_imprimer_etiquette_mrp_view" model="ir.ui.view">
+        <field name="name">is.imprimer.etiquette.view</field>
+        <field name="model">is.imprimer.etiquette.mrp</field>
+        <field name="arch" type="xml">
+            <form string="Impression des étiquettes de livraison">
+                <p>
+                    La validation de cet assistant permet de créer des étiquettes de livraison pour chaque article à fabriquer ou pour le lot.
+                    
+                </p>
+                <footer>
+                    <button name="imprimer_etiquette_livraison" string="Imprimer Etiquette" type="object" class="oe_highlight"/>
+                    or 
+                    <button string="Annuler" class="oe_link" special="cancel" />
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_is_imprimer_etiquette_mrp" model="ir.actions.act_window">
+        <field name="name">Impression des étiquettes de livraison</field>
+        <field name="res_model">is.imprimer.etiquette.mrp</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="is_imprimer_etiquette_mrp_view"/>
+        <field name="target">new</field>
+    </record>
+
+
+    </data>
+</openerp>

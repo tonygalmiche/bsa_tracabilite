@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+    
+    <menuitem id="menu_is_bsa_tracabilite" name="Etiquettes" parent="stock.menu_stock_root" sequence="5"/>
+    
+
+    </data>
+</openerp>

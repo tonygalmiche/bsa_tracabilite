@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+            
+        <record id="is_ems_bsa_of_etiquette_inherit_view" model="ir.ui.view">
+            <field name="name">is.bsa.of.etiquette.inherit.view</field>
+            <field name="model">mrp.production</field>
+            <field name="inherit_id" ref="mrp.mrp_production_form_view" />
+            <field name="arch" type="xml">
+
+                
+                <xpath expr="//button[@name='action_cancel']" position="after">
+                    <button name="%(action_is_imprimer_etiquette_mrp)d"
+                    string="Imprimer Etiquette" 
+                    groups="base.group_user" type="action" class="oe_highlight"
+                    attrs="{'invisible': ['|',('generer_etiquette','=', True),('state','=', 'draft')]}" />
+                    <!--attrs="{'invisible': [('state','=', 'draft')]}" />-->
+
+                    <!--attrs="{'invisible': [('line_ids', '=', [])]}">
+                    attrs="{'invisible': ['|',('generer_etiquette','=', True),('state','=', 'draft')]}" />
+                    attrs="{'invisible': [('etiquette_ids','!=', [])]}" />
+                    -->
+
+
+                    <!--
+                    <button name="is_act_mrp_declarer_produit" 
+                            states="confirmed,ready,in_production" 
+                            string="Déclarer un produit" type="object" class="oe_highlight"/>
+                    -->
+
+                </xpath>
+
+
+                <xpath expr="//page[@string='Scheduled Products']" position="after">
+                    <page string="Etiquettes">
+
+                        <field name="etiquette_ids">
+                            <tree string="Etiquettes" >
+                                <field name="name" />
+                                <field name="fabrique" />
+                                <field name="sale_id"/>
+                                <field name="move_id"/>
+                            </tree>
+                        </field>
+                        <field name="generer_etiquette" invisible="0" />
+                        <field name="is_gestion_lot"    invisible="0" />
+                    </page>
+                </xpath>
+             </field>
+        </record>
+        
+
+    </data>
+</openerp>

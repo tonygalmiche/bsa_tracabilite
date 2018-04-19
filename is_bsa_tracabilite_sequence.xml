@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data> 
+    
+        <record id="is_bsa_tracabilite_type_seq" model="ir.sequence.type">
+            <field name="name">Tracabilité réception</field>
+            <field name="code">is.tracabilite.reception</field>
+        </record>
+
+        <record id="is_bsa_tracabilite_seq" model="ir.sequence">
+            <field name="name">Tracabilité réception</field>
+            <field name="code">is.tracabilite.reception</field>
+            <field name="prefix">TR</field>
+            <field name="padding">4</field>
+            <field name="company_id" eval="False"/>
+        </record>
+        
+        
+        <record id="is_bsa_tracabilite_livraison_type_seq" model="ir.sequence.type">
+            <field name="name">Tracabilité livraison</field>
+            <field name="code">is.tracabilite.livraison</field>
+        </record>
+
+        <record id="is_bsa_tracabilite_livraison_seq" model="ir.sequence">
+            <field name="name">Tracabilité livraison</field>
+            <field name="code">is.tracabilite.livraison</field>
+            <field name="prefix">TL</field>
+            <field name="padding">4</field>
+            <field name="company_id" eval="False"/>
+        </record>
+        
+     </data>
+</openerp>     
+        

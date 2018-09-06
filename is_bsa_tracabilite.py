@@ -163,7 +163,13 @@ class is_tracabilite_reception(osv.osv):
         txt=txt+datamax(x=190,y=100 ,sizex=2,sizey=2,txt="LOT:")
         txt=txt+datamax(x=190,y=80  ,sizex=4,sizey=4,txt=eti.name.encode("utf-8"))
 
-        txt=txt+"1E1406100060014B"+str(eti.name)+chr(10) # Code barre
+        #t=str(eti.name)
+        #sizex="4"
+        #sizey="6"
+        #x="025"
+        #y="020"
+        #txt=txt+"1E1"+sizex+"0"+sizey+"10"+y+"0"+x+"B"+t+chr(10) # Code barre
+        txt=txt+"1E1406100060025B"+str(eti.name)+chr(10) # Code barre
 
         txt=txt+"^01"+chr(10)
         txt=txt+"Q0001"+chr(10)

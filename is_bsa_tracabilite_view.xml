@@ -190,5 +190,40 @@
                 sequence="2"/>
 
 
+
+
+    <!--  Lignes réceptions étiquettes livraison -->
+    <record id="is_tracabilite_reception_line_tree" model="ir.ui.view">
+        <field name="name">is_tracabilite_reception_line_tree</field>
+        <field name="model">is.tracabilite.reception.line</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="livraison_id" widget="many2one_clickable"/>
+                <field name="etiquette_id" widget="many2one_clickable"/>
+                <field name="quantity"/>
+            </tree>
+        </field>
+    </record>
+    <record id="is_tracabilite_reception_line_filter" model="ir.ui.view">
+        <field name="name">is_tracabilite_reception_line_filter</field>
+        <field name="model">is.tracabilite.reception.line</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="livraison_id"/>
+                <field name="etiquette_id" />
+           </search>
+        </field>
+    </record>
+    <record id="is_tracabilite_reception_line_action" model="ir.actions.act_window">
+        <field name="name">Réceptions étiquettes livraison</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">is.tracabilite.reception.line</field>
+        <field name="view_mode">tree</field>
+    </record>
+    <menuitem   action="is_tracabilite_reception_line_action" 
+                id="is_tracabilite_reception_line_menu"
+                parent="menu_is_bsa_tracabilite"
+                sequence="3"/>
+
     </data>
 </openerp>

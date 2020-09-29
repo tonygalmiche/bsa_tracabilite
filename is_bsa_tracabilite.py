@@ -144,6 +144,9 @@ class is_tracabilite_reception(osv.osv):
         if eti.product_id:
             txt=txt+datamax(x=15,y=200,sizex=3,sizey=4,txt=eti.product_id.name.encode("utf-8"))
 
+        if eti.product_id:
+            txt=txt+datamax(x=190,y=220,sizex=2,sizey=2,txt="ID:"+str(eti.product_id.id))
+
         txt=txt+datamax(x=15,y=180,sizex=2,sizey=2,txt="FOURNISSEUR:")
         if eti.picking_id:
             txt=txt+datamax(x=15,y=160,sizex=4,sizey=4,txt=eti.picking_id.partner_id.name.encode("utf-8"))

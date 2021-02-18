@@ -11,23 +11,10 @@
                 
                 <xpath expr="//button[@name='action_cancel']" position="after">
                     <button name="%(action_is_imprimer_etiquette_mrp)d"
-                    string="Imprimer Etiquette" 
-                    groups="base.group_user" type="action" class="oe_highlight"
-                    attrs="{'invisible': ['|',('generer_etiquette','=', True),('state','=', 'draft')]}" />
-                    <!--attrs="{'invisible': [('state','=', 'draft')]}" />-->
-
-                    <!--attrs="{'invisible': [('line_ids', '=', [])]}">
-                    attrs="{'invisible': ['|',('generer_etiquette','=', True),('state','=', 'draft')]}" />
-                    attrs="{'invisible': [('etiquette_ids','!=', [])]}" />
-                    -->
-
-
-                    <!--
-                    <button name="is_act_mrp_declarer_produit" 
-                            states="confirmed,ready,in_production" 
-                            string="Déclarer un produit" type="object" class="oe_highlight"/>
-                    -->
-
+                        string="Créer et imprimer  les étiquette" 
+                        groups="base.group_user" type="action" class="oe_highlight"
+                        attrs="{'invisible': ['|',('generer_etiquette','=', True),('state','=', 'draft')]}"
+                    />
                 </xpath>
 
 

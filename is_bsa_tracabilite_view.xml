@@ -165,6 +165,8 @@
                     <field name="operateur_ids" />
                     <field name="sale_id"/>
                     <field name="move_id"/>
+                    <field name="etiquette_reception"/>
+                    <field name="etiquette_livraison"/>
                     <group expand="1" string="Group By">
                         <filter string="OF"       context="{'group_by':'production_id'}"/>
                         <filter string="Article"  context="{'group_by':'product_id'}"/>

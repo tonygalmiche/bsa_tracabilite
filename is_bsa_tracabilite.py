@@ -242,6 +242,11 @@ class is_tracabilite_livraison(osv.osv):
 
         'etiquette_reception_id': fields.one2many('is.tracabilite.reception.line', 'livraison_id', 'Etiquettes réception'),
         'etiquette_livraison_id': fields.one2many('is.tracabilite.livraison.line', 'livraison_id', 'Etiquettes semi-fini'),
+
+
+        'etiquette_reception': fields.related('etiquette_reception_id', 'etiquette_id', type='many2one', relation='is.tracabilite.reception.line', string='Etiquette réception'),
+        'etiquette_livraison': fields.related('etiquette_livraison_id', 'etiquette_id', type='many2one', relation='is.tracabilite.livraison.line', string='Etiquette semi-fini'),
+
     }
 
 
